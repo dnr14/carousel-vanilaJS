@@ -1,0 +1,99 @@
+#main {
+  .top_slide_3d_area {
+    .top_slide_3d_container {
+      background-color: #333333;
+      display: block;
+      overflow: hidden;
+
+      .top_slide_3d_wrap {
+        margin: auto;
+        box-sizing: border-box;
+        position: relative;
+        width: 906px;
+        height: 596px;
+        overflow: unset;
+        padding-bottom: 92px;
+        box-shadow: inset -4px -4px 50px rgba($color: #333333, $alpha: 1);
+        background-color: #333333;
+
+        .top_slide_3d {
+          height: 100%;
+          .top_item_3d {
+            float: left;
+            height: 100%;
+            width: 906px;
+            & > img {
+              max-height: 100%;
+              width: 100%;
+            }
+          }
+        }
+
+        .top_3d_btn_right,
+        .top_3d_btn_left {
+          position: absolute;
+          width: 40px;
+          height: 90px;
+          margin-top: 0;
+          top: 40%;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+        .top_3d_btn_right {
+          right: 10px;
+          background-image: url("../images/topSlide3d/btnNEXT.png");
+          background-size: 40px auto;
+        }
+
+        .top_3d_btn_left {
+          left: 10px;
+          background-image: url("../images/topSlide3d/btnPREV.png");
+          background-size: 40px auto;
+        }
+      }
+    }
+  }
+}
+
+body {
+  // 3d할때 꼭줘야한다.
+  //css를 안주면 slide너비 만큼 스크롤생성
+  overflow-x: hidden;
+}
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+#title {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 3rem;
+}
+
+// 2d top 3d top
+// bottom slide 페이지네이션 c
+#pagination {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  bottom: 39px;
+  .bullet {
+    cursor: pointer;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+    opacity: 0.4;
+    margin: 0 8px;
+  }
+  .active {
+    background-color: #fabe00;
+    opacity: 1;
+  }
+}

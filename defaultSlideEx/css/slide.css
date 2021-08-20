@@ -1,0 +1,54 @@
+img {
+  display: block;
+}
+
+.wrapper {
+  margin: auto;
+}
+
+.wrapper .slider-wrap {
+  width: 350px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.wrapper .slider-wrap .slider {
+  padding: 0;
+  background-color: orange;
+  list-style: none;
+  display: flex;
+}
+
+.wrapper .slider-wrap .slider li {
+  transform: translate3d(0);
+  transition: 0.2s;
+}
+
+#dragdiv {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rebeccapurple;
+}
+
+.slideBar {
+  width: 350px;
+  height: 10px;
+  background-color: orange;
+  position: relative;
+  margin: auto;
+}
+
+#title {
+  font-size: 3rem;
+  width: 500px;
+  margin: 50px auto;
+}
+
+.btn {
+  display: block;
+  width: 200px;
+  margin: auto;
+}

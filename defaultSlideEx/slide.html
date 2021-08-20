@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/slide.css">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+  <div class="wrapper">
+    <div id="title">display Flax 슬라이드 </div>
+    <div class="slider-wrap">
+      <ul class="slider" id="slider">
+        <li>
+          <img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+        </li>
+        <li>
+          <img src="https://fakeimg.pl/350x200/D27328/000?text=22222">
+        </li>
+
+        <li>
+          <img src="https://fakeimg.pl/350x200/FF607F/000?text=33333">
+        </li>
+
+        <li>
+          <img src="https://fakeimg.pl/350x200/0A6E0A/000?text=44444">
+        </li>
+        <li>
+          <img src="https://fakeimg.pl/350x200/0064CD/000?text=55555">
+        </li>
+        <li>
+          <img src="https://fakeimg.pl/350x200/960a96/000?text=11111">
+        </li>
+      </ul>
+    </div>
+
+    <div class="slideBar">
+      <div id="dragdiv"></div>
+    </div>
+    <br>
+    <button class="btn">슬라이드 한칸 이동</button>
+  </div>
+
+</body>
+<script>
+  const li = document.querySelectorAll('.slider li');
+  const btn = document.querySelector('.btn');
+
+  var array = Array.from([...li]).reduce((l, r) => {
+    return l + r.offsetWidth;
+  }, 0);
+
+
+  function Move(loop = false) {
+    this.idx = 0;
+    this.loop = loop;
+    this.buttonStop = true;
+
+    const moving = () => {
+      this.idx++;
+
+      li.forEach(el => {
+        el.style.transform = `translateX(-${(this.idx * 350)}px)`;
+      });
+
+      if (this.idx === (li.length - 1)) {
+        this.buttonStop = false;
+        setTimeout(() => {
+          li.forEach(el => {
+            el.style.transition = "0s";
+            el.style.transform = `translateX(${0}px)`;
+          });
+          setTimeout(() => {
+            li.forEach(el => el.style.transition = "0.2s");
+            this.buttonStop = true;
+            this.idx = 0;
+          }, 50);
+
+        }, 200);
+      }
+    }
+
+    if (this.loop != false) {
+      setInterval(() => {
+        moving();
+      }, 1000);
+    }
+
+    return (e) => {
+      this.buttonStop
+        ? moving()
+        : e.preventDefault();
+    }
+  }
+
+  btn.addEventListener('click', new Move(false));
+
+
+  var el = document.querySelector('#dragdiv');
+  var slideBar = document.querySelector('.slideBar');
+  var qq = (array - 350) / el.offsetWidth;
+  // 1% 4.2
+  // 18 * 4.2
+
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;  // 해당 기능 전체에서 사용할 변수를 초기화 합니다.
+    elmnt.onmousedown = dragMouseDown; // 요소를 마우스로 눌렀을 경우 dragMouseDown()을 실행 시키게 됩니다
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+    function elementDrag(e) {
+      e = e || window.event;     // e값이 있는 경우 e 값을 그대로 사용하고 없는 경우 window.event값을 e 로 사용하겠다는 선언(Internet Explorer가 e가 없음)
+      e.preventDefault(); // 일단 e의 기본 수행을 막습니다.
+      pos1 = pos3 - e.clientX; // 기존의 마우스 위치값을 비교하여 움직인 새로운 x좌표를 구하여 pos1에 저장합니다. 
+      pos2 = pos4 - e.clientY; // 기존의 마우스 위치값을 비교하여 움직인 새로운 y좌표를 구하여 pos2에 저장합니다. 
+      pos3 = e.clientX; // 다시 새로운 x좌표를 pos3에 저장합니다.
+      pos4 = e.clientY; // 다시 새로운 y좌표를 pos3에 저장합니다.
+      if (elmnt.offsetTop - pos2 >= 0 && elmnt.offsetTop - pos2 <= (slideBar.offsetHeight - elmnt.clientHeight)) {
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      }
+      if (elmnt.offsetLeft - pos1 >= 0 && elmnt.offsetLeft - pos1 <= (slideBar.offsetWidth - elmnt.clientWidth)) {
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      console.log(elmnt.offsetLeft);
+      li.forEach((el) => {
+        el.removeAttribute('style');
+        el.style.transform = `translateX(-${elmnt.offsetLeft * qq}px)`;
+      });
+
+    }
+    function closeDragElement() {
+      document.onmouseup = null; // onmouseup을 초기화 시킴니다.
+      document.onmousemove = null; // onmousemove을 초기화 시킴니다. 
+      console.log("현재 요소의 위치 y는 " + elmnt.style.top + ", x는" + elmnt.style.left + "입니다.");
+    }
+  }
+
+  dragElement(el);
+
+
+
+
+</script>
+
+</html>
