@@ -10,9 +10,9 @@
 
 #main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_left, #main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_right { position: absolute; width: 27px; height: 60px; margin-top: 0; top: 0; bottom: 0; margin: auto; background-position: center; background-repeat: no-repeat; cursor: pointer; }
 
-#main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_right { right: 10px; background-image: url("../images/topSlide/btnNEXT.png"); background-size: 27px auto; }
+#main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_right { right: 10px; background-image: url("../images/next.png"); background-size: 27px auto; }
 
-#main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_left { left: 10px; background-image: url("../images/topSlide/btnPREV.png"); background-size: 27px auto; background-position: center; }
+#main .top_slide_area .top_slide_container .top_slide_wrap .top_btn_left { left: 10px; background-image: url("../images/prev.png"); background-size: 27px auto; background-position: center; }
 
 button { border: none; background-color: transparent; padding: 0; }
 

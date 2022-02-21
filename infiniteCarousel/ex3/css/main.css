@@ -10,9 +10,9 @@
 
 #main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_right, #main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_left { position: absolute; width: 40px; height: 90px; margin-top: 0; top: 40%; background-position: center; background-repeat: no-repeat; cursor: pointer; }
 
-#main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_right { right: 10px; background-image: url("../images/topSlide3d/btnNEXT.png"); background-size: 40px auto; }
+#main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_right { right: 10px; background-image: url("../images/next.png"); background-size: 40px auto; }
 
-#main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_left { left: 10px; background-image: url("../images/topSlide3d/btnPREV.png"); background-size: 40px auto; }
+#main .top_slide_3d_area .top_slide_3d_container .top_slide_3d_wrap .top_3d_btn_left { left: 10px; background-image: url("../images/prev.png"); background-size: 40px auto; }
 
 body { overflow-x: hidden; }
 

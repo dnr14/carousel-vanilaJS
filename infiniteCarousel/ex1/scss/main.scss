@@ -52,7 +52,7 @@
           .btnPause {
             width: 14px;
             height: 15px;
-            background-image: url("../images/slide/slide_spritesheet.png");
+            background-image: url("../images/slide_spritesheet.png");
             background-repeat: no-repeat;
           }
           .btnPlay {
@@ -81,13 +81,13 @@
         top: 199px;
       }
       .btnNext {
-        background-image: url("../images/slide/slide_spritesheet.png");
+        background-image: url("../images/slide_spritesheet.png");
         right: -6px;
         background-position: -43px 0px;
       }
       .btnPrev {
         left: -6px;
-        background-image: url("../images/slide/slide_spritesheet.png");
+        background-image: url("../images/slide_spritesheet.png");
       }
     }
   }

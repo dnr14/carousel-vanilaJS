@@ -1,11 +1,20 @@
-# slider-with-VanilaJS
+# 🎠 Carousel 프로젝트
 
-바닐라JS를 이용하여 구현한 Slider입니다.
+### 🔥 Carousel를 바닐라JS를 이용해서 구현하였습니다.
 
-1. 기본 슬라이드 예제
-2. 무한 슬라이드 예제1
-3. 무한 슬라이드 예제2
-4. 무한 슬라이드 예제3
+1. default Carousel
+2. infinite Carousel
+   - 2-1 예제1 overflow unset Carousel
+   - 2-2 예제2 반응형 Carousel
+   - 2-3 예제3 3D Carousel
 
-1차 정리
-2차 파일 이름 정리 해야된다.
+<br>
+
+> #### ⚙ 프로젝트 실행 해보기
+
+```js
+ git clone https://github.com/dnr14/carousel-vanilaJS.git
+ cd carousel-vanilaJS
+ npm -g i serve
+ serve -s ./보고싶은 프로젝트 경로
+```

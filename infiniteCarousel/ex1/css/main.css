@@ -18,7 +18,7 @@
 
 #main .mainVisual .slider-container .controlInner .controlBtnArea { height: 17px; font-size: 0; }
 
-#main .mainVisual .slider-container .controlInner .controlBtnArea .btnPlay, #main .mainVisual .slider-container .controlInner .controlBtnArea .btnPause { width: 14px; height: 15px; background-image: url("../images/slide/slide_spritesheet.png"); background-repeat: no-repeat; }
+#main .mainVisual .slider-container .controlInner .controlBtnArea .btnPlay, #main .mainVisual .slider-container .controlInner .controlBtnArea .btnPause { width: 14px; height: 15px; background-image: url("../images/slide_spritesheet.png"); background-repeat: no-repeat; }
 
 #main .mainVisual .slider-container .controlInner .controlBtnArea .btnPlay { background-position: -84px 0px; }
 
@@ -30,9 +30,9 @@
 
 #main .mainVisual .slider-container .btnNext, #main .mainVisual .slider-container .btnPrev { position: absolute; width: 43px; height: 74px; background-repeat: no-repeat; top: 199px; }
 
-#main .mainVisual .slider-container .btnNext { background-image: url("../images/slide/slide_spritesheet.png"); right: -6px; background-position: -43px 0px; }
+#main .mainVisual .slider-container .btnNext { background-image: url("../images/slide_spritesheet.png"); right: -6px; background-position: -43px 0px; }
 
-#main .mainVisual .slider-container .btnPrev { left: -6px; background-image: url("../images/slide/slide_spritesheet.png"); }
+#main .mainVisual .slider-container .btnPrev { left: -6px; background-image: url("../images/slide_spritesheet.png"); }
 
 button { border: none; outline: none; background-color: transparent; padding: 0; cursor: pointer; }
 
